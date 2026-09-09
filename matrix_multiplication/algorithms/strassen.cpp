@@ -1,5 +1,5 @@
 // CPP program to implement Strassen’s Matrix
-// sacado de: gemini ai
+// Fuente: Gemini AI, pues otras implementaciones eran mucho más lentas.
 #include <bits/stdc++.h>
 #include "algorithms.h"
 #include <iostream>
