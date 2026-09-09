@@ -33,7 +33,7 @@ void guardarArreglo(const string& ruta, const vector<int>& arr){
     archivo.close();
 }  
 
-vector<int> tamanos = {10, 1000, 100000}; //10 000 000
+vector<int> tamanos = {10, 1000, 100000, 10000000}; //10 000 000
 vector<string> tipos = {"ascendente","descendente","aleatorio"};
 vector<string> dominios = {"D1","D7"};
 vector<char> muestras ={'a','b','c'};
@@ -63,7 +63,7 @@ int main(){
           string rutaInput ="data/array_input/" + nombreArchivoIn;
           const string rutaOut  ="data/array_output/"+nombreArchivoOut;
           vector<int> arr =sacarArreglo(rutaInput);
-          /*
+
           {
             vector<int> copia = arr;
             auto inicio = high_resolution_clock::now();
@@ -80,7 +80,6 @@ int main(){
             << tiempo << "," << memoria << "\n";
           
           }
-          */
           {
             vector<int> copia = arr;
             auto inicio = high_resolution_clock::now();
@@ -97,7 +96,6 @@ int main(){
             archivoQuick << n << "," << tipo << ","<< dominio << "," << muestra << ","
                             << tiempo << "," << memoria << "\n";
           }
-          /*
           {
             vector<int> copia = arr;
             auto inicio =high_resolution_clock::now();
@@ -133,7 +131,6 @@ int main(){
                 << tipo << "," << dominio << "," << muestra << ","
                 << tiempo << "," << memoria << "\n";
           }
-          */
         }
       }
     }
