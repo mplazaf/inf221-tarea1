@@ -26,10 +26,6 @@ COLUMNAS = [
 
 
 def leer_mediciones(nombre_archivo):
-    """
-    lee los csv con formato 
-    n,tipo,dominio,muestra,tiempo(microsegundos),memoria(kb)
-    """
     ruta = os.path.join(MEASUREMENTS_DIR, nombre_archivo)
 
     df = pd.read_csv(ruta, header=None, names=COLUMNAS)
@@ -42,9 +38,6 @@ def leer_mediciones(nombre_archivo):
 
 
 def cargar_datos():
-    """
-    Une las mediciones de todos los algoritmos en un solo DataFrame.
-    """
     datos = []
 
     for algoritmo, archivo in ARCHIVOS.items():
@@ -54,18 +47,8 @@ def cargar_datos():
     return pd.concat(datos, ignore_index=True)
 
 def graficar_tiempo(datos):
-    """
-    Genera un gráfico para cada combinación tipo + dominio.
-
-    Eje X: tamaño del arreglo (n)
-    Eje Y: tiempo promedio en microsegundos
-
-    Para cada n se promedian las muestras a, b y c.
-    Cada línea representa un algoritmo.
-    """
     tipos = sorted(datos["tipo"].unique())
     dominios = sorted(datos["dominio"].unique())
-
     for tipo in tipos:
         for dominio in dominios:
 
@@ -75,9 +58,7 @@ def graficar_tiempo(datos):
             ]
 
             resumen = (
-                filtro
-                .groupby(["algoritmo", "n"], as_index=False)["tiempo_us"]
-                .mean()
+                filtro.groupby(["algoritmo", "n"], as_index=False)["tiempo_us"].mean()
             )
 
             plt.figure(figsize=(9, 6))
@@ -111,15 +92,6 @@ def graficar_tiempo(datos):
 
 
 def graficar_memoria(datos):
-    """
-    Genera un gráfico para cada combinación tipo + dominio.
-
-    Eje X: tamaño del arreglo (n)
-    Eje Y: memoria promedio en KB
-
-    Para cada n se promedian las muestras a, b y c.
-    Cada línea representa un algoritmo.
-    """
     tipos = sorted(datos["tipo"].unique())
     dominios = sorted(datos["dominio"].unique())
 
@@ -151,7 +123,6 @@ def graficar_memoria(datos):
             nombre = f"memoria_{tipo}_{dominio}.png"
             plt.savefig(os.path.join(PLOTS_DIR, nombre))
             plt.close()
-
 
 def main():
     os.makedirs(PLOTS_DIR, exist_ok=True)
