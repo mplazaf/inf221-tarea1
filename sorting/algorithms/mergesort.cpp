@@ -1,9 +1,8 @@
-// C++ program for the implementation of merge sort
+//https://www-geeksforgeeks-org.translate.goog/cpp/cpp-program-for-merge-sort/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc&_x_tr_hist=true
 #include <iostream>
 #include <vector>
 #include "algorithms.h"
 using namespace std;
-
 // Merges two subarrays of vec.
 // First subarray is vec[left..mid]
 // Second subarray is vec[mid+1..right]
