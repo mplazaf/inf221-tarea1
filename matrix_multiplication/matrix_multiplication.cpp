@@ -7,7 +7,7 @@
 #include <sys/resource.h>
 using namespace std;
 
-vector<int> tamanos = {16, 64, 256}; //  1024
+vector<int> tamanos = {16, 64, 256,1024}; //  1024
 vector<string> tipos = {"dispersa", "diagonal","densa"};
 vector<string> dominios = {"D0","D10"};
 vector<char> muestras ={'a','b','c'};
@@ -66,7 +66,7 @@ int main() {
 
           vector<vector<int>> matrix1 = sacarMatriz(rutaInput1, n);
           vector<vector<int>> matrix2 = sacarMatriz(rutaInput2, n);
-          /*
+
           {
             auto inicio = chrono::high_resolution_clock::now();
 
@@ -81,7 +81,7 @@ int main() {
             << tiempo << "," << memoria << "\n";
             cout << "listo naive "<< n <<endl;
           }
-          */
+
           {
             auto inicio = chrono::high_resolution_clock::now();
 
