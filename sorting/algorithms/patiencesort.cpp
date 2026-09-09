@@ -1,5 +1,6 @@
 
-// gemini ai optimizada porque otras se iban a o(n²)
+//Fuente: Gemini AI , implementación optimizada porque otras implementaciones se iban a o(n²), específicamente:
+// https://www.geeksforgeeks.org/dsa/patience-sorting/ -> muy lenta
 
 #include <iostream>
 #include <vector>
