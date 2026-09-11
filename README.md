@@ -2,6 +2,9 @@
 Nombre: Miguel Plaza
 Rol: 202473058-4
 Semestre: 2026-2
+## DATA
+Por temas del almacenamiento, se quitan los archivos input y output, pero están en el repositorio del github.
+https://github.com/mplazaf/inf221-tarea1
 
 ## Multiplicación de matrices
 - Las fuentes de dónde fueron extraidos los algoritmos están en sus archivos cpp.
